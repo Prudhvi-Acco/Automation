@@ -31,22 +31,21 @@ public class NavigateBackToHomeScreen extends Base {
                 )
         );
 
-        String shoppingURL = commonObj.$getAttributeValue(
+        String shoppingURL = utilities.$getAttributeValue(
                 commonObj.$ProuctHelpCard.apply(productHelpCards.getSHOPPING()),
                 "href");
         System.out.println(shoppingURL);
 
         Assert.assertTrue(
                 commonObj
-                        .$ProuctHelpCard
-                        .apply(productHelpCards.getSHOPPING())
+                        .$ProuctHelpCard.apply(productHelpCards.getSHOPPING())
                         .isEnabled()
         );
 
         commonObj.$ProuctHelpCard.apply(productHelpCards.getSHOPPING()).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(shoppingURL));
 
-        commonObj.$NavigateToHomeScreen.get().click();
+        commonObj.$NavigateToHomeScreen.click();
         System.out.println(webDriver.getCurrentUrl());
         Assert.assertTrue(webDriver.getCurrentUrl().contains(shoppingURL.split("hl=en")[0]));
     }

@@ -23,6 +23,7 @@ public class Base {
         webDriver = Base.startApplication("Chrome");
         webDriver.manage().deleteAllCookies();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
+        webDriver.manage().timeouts().pageLoadTimeout(Duration.ofMillis(5000));
         webDriver.manage().window().maximize();
     }
 

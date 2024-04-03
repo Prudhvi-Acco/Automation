@@ -34,7 +34,7 @@ public class HelpCardResults extends Base {
                 )
         );
 
-        String gmailURL = commonObj.$getAttributeValue(
+        String gmailURL = utilities.$getAttributeValue(
                 commonObj.$ProuctHelpCard.apply(productHelpCards.getGMAIL()),
                 "href");
         System.out.println(gmailURL);

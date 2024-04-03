@@ -34,7 +34,7 @@ public class HomeScreen extends Base {
                 )
         );
 
-        String shoppingURL = commonObj.$getAttributeValue(
+        String shoppingURL = utilities.$getAttributeValue(
                 commonObj.$ProuctHelpCard.apply(productHelpCards.getSHOPPING()),
                 "href");
 
@@ -47,7 +47,7 @@ public class HomeScreen extends Base {
 
         commonObj.$ProuctHelpCard.apply(productHelpCards.getSHOPPING()).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(shoppingURL));
-        Assert.assertTrue(commonObj.$NavigateToHomeScreen.get().getText().contains(productHelpCards.getSHOPPING()));
+        Assert.assertTrue(commonObj.$NavigateToHomeScreen.getText().contains(productHelpCards.getSHOPPING()));
     }
 
     @After
